@@ -9,7 +9,7 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV WEB_INT_VERSION graylog-web-interface-1.1.6
+ENV WEB_INT_VERSION graylog-web-interface-1.2.1
 
 # Update & install packages for graylog
 RUN apt-get update && \
