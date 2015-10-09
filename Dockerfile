@@ -10,6 +10,8 @@ FROM debian:latest
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
 ENV WEB_INT_VERSION graylog-web-interface-1.2.1
+ENV APPLICATION_SECRET deL8KgPYbjORlwudXWrPqrGHf4HEIBWkcK7yAVC5PtUO0mrI1y6v7NTKbYsCN7Ey7NGVvEAv1SClyRGoQDbN5W1iUQgYJKXT
+ENV GRAYLOG2_SERVER_URIS http://127.0.0.1:12900/,http://127.0.0.1:12910/
 
 # Update & install packages for graylog
 RUN apt-get update && \
@@ -20,10 +22,15 @@ RUN wget --no-check-certificate https://packages.graylog2.org/releases/graylog2-
  tar xvfz $WEB_INT_VERSION.tgz
 ADD graylog-web-interface.conf /$WEB_INT_VERSION/conf/
 
+#RUN sed -i \
+#    -e "s|\$APPLICATION_SECRET|$APPLICATION_SECRET|g" \
+#    /$WEB_INT_VERSION/conf/graylog-web-interface.conf
+
 #Add link for binary
 RUN ln -s /$WEB_INT_VERSION/bin/graylog-web-interface /usr/bin/graylog-web-interface && ls -l /usr/bin/graylog-web-interface
 
 EXPOSE 9000
 
-#CMD ["/start.sh"]
-CMD ["/usr/bin/graylog-web-interface"]
+ADD start.sh /
+
+CMD ["/bin/bash", "/start.sh"]
