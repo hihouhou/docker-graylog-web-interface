@@ -3,11 +3,11 @@ graylog-web-interface for docker
 
 ## Start graylog-web-interface
 
-`docker run -p 9000:9000 --link graylog-server:graylog-server -e APPLICATION_SECRET='DnXVN26062ju5f0zrLDu9M5RQrtK3PWJDA2zhzTHbTKt36MMcWI2JkowSffWU5TaNp648V4fXlCbTu6d7JZv5FtmA2G7Yayi' -e GRAYLOG2_SERVER_URIS='http://graylog-server:12900/' --name hihouhou/graylog-web-interface graylog-web-interface:latest`
+`docker run -p 9000:9000 --link graylog-server:graylog-server -e APPLICATION_SECRET='DnXVN26062ju5f0zrLDu9M5RQrtK3PWJDA2zhzTHbTKt36MMcWI2JkowSffWU5TaNp648V4fXlCbTu6d7JZv5FtmA2G7Yayi' -e GRAYLOG2_SERVER_URIS='http://graylog-server:12900/' --name graylog-web-interface hihouhou/graylog-web-interface`
 
 ## Start graylog-web-interface without ENV 
 
-`docker run -p 9000:9000 --link graylog-server:graylog-server --name hihouhou/graylog-web-interface graylog-web-interface:latest`
+`docker run -p 9000:9000 --link graylog-server:graylog-server --name graylog-web-interface hihouhou/graylog-web-interface`
 
 ## for docker-compose
 
