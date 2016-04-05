@@ -9,7 +9,7 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV WEB_INT_VERSION graylog-web-interface-1.2.1
+ENV WEB_INT_VERSION graylog-web-interface-1.3.4
 ENV APPLICATION_SECRET deL8KgPYbjORlwudXWrPqrGHf4HEIBWkcK7yAVC5PtUO0mrI1y6v7NTKbYsCN7Ey7NGVvEAv1SClyRGoQDbN5W1iUQgYJKXT
 ENV GRAYLOG2_SERVER_URIS http://127.0.0.1:12900/,http://127.0.0.1:12910/
 
